@@ -1,6 +1,6 @@
 # Orbis1 SDK — Developer Documentation
 
-Source for the [Orbis1 SDK developer docs](https://orbis-1.github.io/developer-docs/), built with [VitePress](https://vitepress.dev) and hosted on GitHub Pages.
+Source for the [Orbis1 SDK developer docs](https://docs.orbis1.io/), built with [VitePress](https://vitepress.dev) and hosted on GitHub Pages.
 
 ## Packages covered
 
@@ -8,6 +8,18 @@ Source for the [Orbis1 SDK developer docs](https://orbis-1.github.io/developer-d
 |---|---|---|
 | [`orbis1-sdk-node`](https://github.com/Orbis-1/orbis1-sdk-node) | npm | RGB wallet SDK for Node.js |
 | [`orbis1-sdk-rn`](https://github.com/Orbis-1/orbis1-sdk-rn) | npm / yarn | RGB wallet SDK for React Native |
+
+## AI Coding Assistant Skill
+
+Install the Orbis1 SDK skill for Claude Code, Cursor, Copilot, and other AI coding assistants:
+
+```bash
+npx skills add orbis-1/developer-docs --skill orbis1-sdk --global
+```
+
+This skill helps AI assistants correctly use the Orbis1 SDK APIs, handle RGB-specific patterns (base units, UTXO management, gas-free flows), and avoid common mistakes.
+
+**Auto-discovery:** AI agents visiting `https://docs.orbis1.io/` can automatically discover and use the skill via the `.well-known/skills/` endpoint.
 
 ## Local development
 
@@ -30,7 +42,7 @@ Output is written to `.vitepress/dist/`.
 
 Docs are deployed automatically to GitHub Pages on every push to `main` via the [GitHub Actions workflow](.github/workflows/deploy.yml).
 
-Live URL: **https://orbis-1.github.io/developer-docs/**
+Live URL: **https://docs.orbis1.io/**
 
 ## Structure
 
