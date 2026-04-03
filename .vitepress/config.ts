@@ -98,7 +98,7 @@ export default defineConfig({
           items: [
             { text: 'Basic Usage', link: '/react-native/examples/basic-usage' },
             { text: 'Gas-Free Transfer', link: '/react-native/examples/gas-free-transfer' },
-            { text: 'Asset Operations', link: '/react-native/examples/asset-operations' },
+            { text: 'Asset Issuance', link: '/react-native/examples/asset-issuance' },
           ],
         },
         {
