@@ -2,7 +2,7 @@
 
 A minimal 5-step flow from key generation to BTC balance query.
 
-## Step 1 — Generate keys
+## Step 1: Generate keys
 
 ```typescript
 import { generateKeys, BitcoinNetwork } from 'orbis1-sdk-rn';
@@ -16,7 +16,7 @@ const keys = await generateKeys(BitcoinNetwork.TESTNET4);
 
 Store `keys.mnemonic` securely (e.g., React Native Keychain). Never commit mnemonics.
 
-## Step 2 — Initialize SDK
+## Step 2: Initialize SDK
 
 ```typescript
 import { Orbis1SDK, Environment, AssetSchema, LogLevel } from 'orbis1-sdk-rn';
@@ -39,7 +39,7 @@ const sdk = new Orbis1SDK({
 await sdk.initialize();
 ```
 
-## Step 3 — Go online and sync
+## Step 3: Go online and sync
 
 ```typescript
 const wallet = sdk.getWallet()!;
@@ -48,7 +48,7 @@ await wallet.goOnline('ssl://electrum.iriswallet.com:50053');
 await wallet.sync();
 ```
 
-## Step 4 — Query balances
+## Step 4: Query balances
 
 ```typescript
 const btc = await wallet.getBtcBalance();
@@ -58,7 +58,7 @@ const assets = await wallet.listAssets([]);
 console.log('NIA count:', assets.nia?.length ?? 0);
 ```
 
-## Step 5 — Cleanup (on unmount)
+## Step 5: Cleanup (on unmount)
 
 ```typescript
 // In React Native: inside useEffect cleanup

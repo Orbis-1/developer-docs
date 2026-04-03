@@ -262,7 +262,8 @@ await wallet.backup('/path/to/backup.rgbwallet', 'strongPassword');
 const hasBak = await wallet.backupInfo();
 
 // Restore at initialization time (before wallet use)
-await Rgb.restoreBackup('/path/to/backup.rgbwallet', 'strongPassword', dataDir);
+import { restoreBackup } from 'orbis1-sdk-node';
+await restoreBackup('/path/to/backup.rgbwallet', 'strongPassword', dataDir);
 ```
 
 ## Closing the wallet

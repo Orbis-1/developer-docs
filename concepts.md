@@ -56,7 +56,7 @@ const receiveData = await wallet.blindReceive(
   ['rpcs://proxy.iriswallet.com/0.2/json-rpc'],
   1                                           // minConfirmations
 );
-console.log(receiveData.invoice); // rgb:~/~/cR/tb4:utxob:...
+console.log(receiveData.invoice); // rgb:~/~/...
 ```
 
 ## Amounts and Precision

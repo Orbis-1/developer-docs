@@ -34,7 +34,7 @@ export default defineConfig({
         link: '/react-native/',
         activeMatch: '/react-native/',
       },
-      { text: 'Reference', link: '/reference/environments' },
+      // { text: 'Reference', link: '/reference/environments' },
     ],
 
     sidebar: {

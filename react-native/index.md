@@ -4,7 +4,7 @@
 
 ## Features
 
-- RGB 20/21/25/IFA asset issuance and transfer
+- RGB NIA/UDA/CFA/IFA asset issuance and transfer
 - Gas-Free transfers via collaborative PSBT (no BTC required from user)
 - Watch Tower invoice monitoring with FCM push support
 - New Architecture (Turbo Modules) support

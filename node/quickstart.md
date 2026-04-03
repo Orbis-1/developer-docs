@@ -2,7 +2,7 @@
 
 This guide walks through a complete minimal flow: generate keys, initialize the SDK, connect to a Bitcoin indexer, and query your balances.
 
-## Step 1 — Generate or restore keys
+## Step 1: Generate or restore keys
 
 On first run, generate a new wallet:
 
@@ -24,7 +24,7 @@ import { restoreKeys, BitcoinNetwork } from 'orbis1-sdk-node';
 const keys = await restoreKeys(BitcoinNetwork.TESTNET4, 'your twelve word mnemonic ...');
 ```
 
-## Step 2 — Initialize the SDK
+## Step 2: Initialize the SDK
 
 ```typescript
 import { Orbis1SDK, Environment, LogLevel, AssetSchema } from 'orbis1-sdk-node';
@@ -47,7 +47,7 @@ const sdk = new Orbis1SDK({
 await sdk.initialize();
 ```
 
-## Step 3 — Connect and sync
+## Step 3: Connect and sync
 
 ```typescript
 const wallet = sdk.getWallet()!;
@@ -59,7 +59,7 @@ await wallet.goOnline(false, 'ssl://electrum.iriswallet.com:50053');
 await wallet.sync();
 ```
 
-## Step 4 — Query balances
+## Step 4: Query balances
 
 ```typescript
 // Bitcoin balances (vanilla = BTC, colored = UTXOs with RGB allocations)
@@ -71,7 +71,7 @@ const assets = await wallet.listAssets([]);  // empty array = all schemas
 console.log('RGB assets:', assets.nia.length, 'NIA,', assets.uda.length, 'UDA');
 ```
 
-## Step 5 — Cleanup
+## Step 5: Cleanup
 
 ```typescript
 await wallet.close();

@@ -21,7 +21,6 @@ import {
 } from 'orbis1-sdk-node';
 
 const INDEXER = 'ssl://electrum.iriswallet.com:50053';
-const PROXY   = 'rpcs://proxy.iriswallet.com/0.2/json-rpc';
 
 async function senderMain(recipientInvoice: string, existingAssetId?: string) {
   const keys = await restoreKeys(BitcoinNetwork.TESTNET4, process.env.MNEMONIC!);

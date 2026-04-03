@@ -172,7 +172,7 @@ try {
     console.error('Service unreachable:', error.message);
   }
   if (error instanceof GasFreeError) {
-    console.error(`Gas-Free error [${error.code}]:`, error.message);
+    console.error(`Gas-Free error [${error.gasFreeCode}]:`, error.message);
   }
   throw error;
 }

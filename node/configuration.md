@@ -67,7 +67,7 @@ const sdk = new Orbis1SDK({
 | Field | Type | Required | Default | Description |
 |---|---|---|---|---|
 | `apiKey` | `string` | ✅ | — | API key from Orbis1 services |
-| `environment` | `Environment` | ✅ | `MAINNET` | Target network and service endpoints |
+| `environment` | `Environment` | ✅ | — | Target network and service endpoints |
 | `wallet` | `WalletConfig` | | — | Wallet configuration; required for Gas-Free |
 | `features` | `FeaturesConfig` | | `{}` | Enable and configure features |
 | `logging` | `LoggingConfig` | | `{ level: 'info' }` | Log level and custom logger |
