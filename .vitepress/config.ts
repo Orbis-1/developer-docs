@@ -34,7 +34,7 @@ export default defineConfig({
         link: '/react-native/',
         activeMatch: '/react-native/',
       },
-      { text: 'Reference', link: '/reference/error-codes' },
+      { text: 'Reference', link: '/reference/environments' },
     ],
 
     sidebar: {
@@ -68,8 +68,8 @@ export default defineConfig({
         {
           text: 'Reference',
           items: [
-            { text: 'Error Codes', link: '/reference/error-codes' },
             { text: 'Environments', link: '/reference/environments' },
+            { text: 'Error Codes', link: '/reference/error-codes' },
             { text: 'Troubleshooting', link: '/troubleshooting' },
           ],
         },
@@ -104,8 +104,8 @@ export default defineConfig({
         {
           text: 'Reference',
           items: [
-            { text: 'Error Codes', link: '/reference/error-codes' },
             { text: 'Environments', link: '/reference/environments' },
+            { text: 'Error Codes', link: '/reference/error-codes' },
             { text: 'Troubleshooting', link: '/troubleshooting' },
           ],
         },
@@ -129,13 +129,14 @@ export default defineConfig({
         {
           text: 'Reference',
           items: [
-            { text: 'Error Codes', link: '/reference/error-codes' },
             { text: 'Environments', link: '/reference/environments' },
+            { text: 'Error Codes', link: '/reference/error-codes' },
             { text: 'Troubleshooting', link: '/troubleshooting' },
           ],
         },
       ],
     },
+
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Orbis-1' },
