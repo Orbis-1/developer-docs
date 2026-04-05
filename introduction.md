@@ -16,7 +16,7 @@ Both packages expose an **identical public API**. Only the native binding layer 
 ## What can it do?
 
 - **RGB wallet operations** — generate keys, create UTXOs, issue assets (NIA, UDA, CFA, IFA), send and receive via blinded or witness invoices, query balances and transfer history
-- **Gas-Free transfers** — collaborative PSBT signing where the Orbis1 service covers Bitcoin mining fees in exchange for a small RGB asset payment; users never need to hold BTC
+- **Gas-Free transfers** — collaborative PSBT signing where the Orbis1 service covers Bitcoin mining fees in exchange for a small RGB asset payment; users never need to hold BTC for RGB transfers 
 - **Watch Tower monitoring** — register invoices for server-side monitoring and optional FCM push notifications on incoming transfers
 
 ## Architecture overview
@@ -36,7 +36,7 @@ Wallet
         └── React Native: Turbo Module → iOS/Android rgb-lib binding
 ```
 
-## SDK vs platform comparison
+## Package comparison
 
 | Aspect | `orbis1-sdk-node` | `orbis1-sdk-rn` |
 |---|---|---|
@@ -66,5 +66,5 @@ Both SDKs are MIT-licensed and hosted on GitHub:
 
 ## Next steps
 
-- Read [Core Concepts](/concepts) to understand RGB assets, UTXOs, and the gas-free model
+- Read [Core Concepts](/concepts) to understand RGB assets, UTXOs, and the Gas-Free model
 - Jump to [Node.js Quick Start](/node/quickstart) or [React Native Quick Start](/react-native/quickstart) to run your first transfer

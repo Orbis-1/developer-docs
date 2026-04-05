@@ -38,7 +38,12 @@ const sdk = new Orbis1SDK({
   features: {
     gasFree: {
       enabled: true,
-      timeout: 30_000,                      // HTTP timeout ms (default: 30000)
+      timeout: 30_000,               // HTTP timeout ms (default: 30000)
+      maxRetries: 3,                 // retries on transient failure (default: 3)
+      retryBaseDelay: 1_000,         // backoff start ms (default: 1000)
+      retryMaxDelay: 10_000,         // backoff cap ms (default: 10000)
+      retryJitter: true,             // randomise backoff (default: true)
+      quoteExpirationBuffer: 30_000, // reject quote if expiring within this window ms
     },
     watchTower: {
       enabled: true,
@@ -87,8 +92,13 @@ const sdk = new Orbis1SDK({
 
 | Field | Type | Default | Description |
 |---|---|---|---|
-| `enabled` | `boolean` | `false` | Activate Gas-Free module |
-| `timeout` | `number` (ms) | `30000` | HTTP timeout for all service calls |
+| `enabled` | `boolean` | `false` | Activate Gas-Free |
+| `timeout` | `number` (ms) | `30000` | HTTP timeout |
+| `maxRetries` | `number` | `3` | Retry count on transient failures |
+| `retryBaseDelay` | `number` (ms) | `1000` | Backoff base delay |
+| `retryMaxDelay` | `number` (ms) | `10000` | Backoff cap |
+| `retryJitter` | `boolean` | `true` | Randomise backoff |
+| `quoteExpirationBuffer` | `number` (ms) | `30000` | Reject quotes expiring soon |
 
 ### `features.watchTower`
 

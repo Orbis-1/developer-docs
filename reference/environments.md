@@ -77,7 +77,7 @@ Mismatching key type and environment causes a `ConfigurationError` at SDK constr
 |---|---|---|
 | Electrum indexer | `ssl://electrum.iriswallet.com:50053` | _(contact team)_ |
 | RGB proxy | `rpcs://proxy.iriswallet.com/0.2/json-rpc` | _(contact team)_ |
-| Gas-Free API | `https://api.orbis1.io/api/v1` | `https://api.orbis1.io/api/v1` |
+| Gas-Free API | `https://gasfree-dev.orbis1.io` | `https://gasfree.orbis1.io` |
 
 ## Gas-Free API endpoints
 

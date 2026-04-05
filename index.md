@@ -4,7 +4,7 @@ layout: home
 hero:
   name: Orbis1 SDK
   text: RGB Asset Operations for Bitcoin
-  tagline: Modular TypeScript SDKs for Node.js and React Native — gas-free transfers, wallet operations, and Watch Tower monitoring out of the box.
+  tagline: Plug-and-Play TypeScript SDKs for Node.js and React Native, with built-in Gas-Free Transfers, RGB Operations, and Watch Tower monitoring.
   actions:
     - theme: brand
       text: Node.js SDK →
@@ -28,11 +28,11 @@ features:
     details: Register invoices for server-side monitoring. Receive push notifications for incoming RGB transfers via FCM.
   - icon: 📦
     title: Single Package
-    details: One install gets you everything — core RGB bindings, Gas-Free, and Watch Tower. No dependency trees to manage.
+    details: One install gets you everything - core RGB bindings, Gas-Free, and Watch Tower. No dependency trees to manage.
   - icon: 🧩
     title: Modular & Opt-in
     details: Enable only the features you need. Each feature is independently configured and initialized at startup.
   - icon: 🔒
     title: Non-Custodial
-    details: Your keys never leave your device. All signing happens client-side. The service only contributes Bitcoin for mining fees.
+    details: Your keys never leave your device. All signing happens client-side. The service only contributes sats for mining fees.
 ---

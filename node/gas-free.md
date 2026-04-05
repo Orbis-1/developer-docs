@@ -15,7 +15,7 @@ User                    Service
  │<─ serviceSigned PSBT ────│
  │                          │
  │── broadcastTransfer──────┤ (user signs their inputs, broadcasts)
- │── verifyTransfer ────────>│
+ │── verifyTransfer ───────>│
  │<─ { status: "verified" }─│
 ```
 
@@ -83,9 +83,6 @@ console.log(`Status: ${result.status}`);       // 'verified' | 'pending_verifica
 | `miningChangeUTXO` | `object` | Service-provided BTC change output |
 | `status` | `string` | `'pending' \| 'accepted' \| 'expired' \| 'completed' \| 'failed'` |
 
-## Amount and `numInputs`/`numOutputs` note
-
-`amount` and `recipientInvoice` are stored locally and used in `buildPSBT` — they are **not** forwarded to the service when generating the quote. The service prices based on `numInputs` and `numOutputs` only.
 
 ## Advanced staged API
 

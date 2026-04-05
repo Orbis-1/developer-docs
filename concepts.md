@@ -85,7 +85,7 @@ The flow uses **collaborative PSBT signing**:
 
 1. Client calls `requestFeeQuote()` — service returns a fee quote with an RGB invoice for the service fee
 2. Client builds an unsigned PSBT via `wallet.sendBegin()` with:
-   - Merchant invoice (actual transfer recipient)
+   - Recipient invoice (actual transfer recipient)
    - Service fee invoice (RGB payment back to service)
    - Service's mining UTXO as an external input
 3. Service validates the consignment and co-signs the mining input (`SIGHASH_ALL`)
@@ -94,14 +94,14 @@ The flow uses **collaborative PSBT signing**:
 Because the service signs with `SIGHASH_ALL` first, it cryptographically commits to the OP_RETURN RGB allocation. The client cannot change the fee allocation after the service signs.
 
 ```
-User UTXO (RGB + BTC)  ──┐              ┌── OP_RETURN (RGB commitment)
+User UTXO (RGB + BTC)   ──┐              ┌── OP_RETURN (RGB commitment)
                           ├── Bitcoin ──►├── User BTC change (unchanged)
-Service UTXO (BTC only) ──┘  transaction└── Service BTC change (after fee)
+Service UTXO (BTC only) ──┘  transaction └── Service BTC change (after fee)
 
 RGB allocations in OP_RETURN:
-  → Merchant:  requested transfer amount
-  → Service:   fee (dynamic, covers mining cost + 10% premium)
-  → User:      RGB change
+  → Recipient:  requested transfer amount
+  → Service:    fee (dynamic, covers mining cost + service premium)
+  → User:       RGB change
 ```
 
 **Security properties:**
