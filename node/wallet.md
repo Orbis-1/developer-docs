@@ -263,7 +263,10 @@ const hasBak = await wallet.backupInfo();
 
 // Restore at initialization time (before wallet use)
 import { restoreBackup } from 'orbis1-sdk-node';
-await restoreBackup('/path/to/backup.rgbwallet', 'strongPassword', dataDir);
+// dataDir is optional - defaults to .orbis1-wallet-data at project root
+await restoreBackup('/path/to/backup.rgbwallet', 'strongPassword');
+// Or specify custom path:
+// await restoreBackup('/path/to/backup.rgbwallet', 'strongPassword', '/custom/data/dir');
 ```
 
 ## Closing the wallet

@@ -25,6 +25,7 @@ const sdk = new Orbis1SDK({
   wallet: {
     enabled: true,
     keys,
+    dataDir: `${RNFS.DocumentDirectoryPath}/wallet-data`,  // optional: defaults to app documents directory
     supportedSchemas: [AssetSchema.NIA, AssetSchema.CFA, AssetSchema.UDA],
     maxAllocationsPerUtxo: 1,            // default: 1
     vanillaKeychain: 0,                  // default: 0
@@ -80,6 +81,7 @@ const sdk = new Orbis1SDK({
 |---|---|---|---|---|
 | `enabled` | `boolean` | ✅ | — | Must be `true` to activate |
 | `keys` | `Keys` | ✅ | — | Mnemonic, xpubs, fingerprint |
+| `dataDir` | `string` | | App documents directory | Absolute path where wallet data is stored. Defaults to app's documents directory. |
 | `supportedSchemas` | `AssetSchema[]` | | `[CFA, NIA, UDA]` | Asset schemas to track |
 | `maxAllocationsPerUtxo` | `number` | | `1` | RGB allocations per UTXO |
 | `vanillaKeychain` | `number` | | `0` | Keychain index for BTC side |
@@ -120,6 +122,51 @@ const sdk = new Orbis1SDK({
 | `TESTNET4` | Bitcoin Testnet4 | `pk_test_` |
 | `REGTEST` | Local regtest | `pk_test_` |
 | `MAINNET` | Bitcoin Mainnet | `sk_live_` |
+
+## Wallet data storage
+
+### Default location
+
+If `wallet.dataDir` is not specified, wallet data is stored in the app's **documents directory** (platform-specific):
+
+- **iOS**: `NSDocumentDirectory`
+- **Android**: `Context.getFilesDir()`
+
+This ensures wallet data:
+- ✅ Persists across app updates
+- ✅ Is backed up (iOS)
+- ✅ Survives cache clearing
+
+### Custom location 
+
+For explicit control, use `react-native-fs`:
+
+```bash
+yarn add react-native-fs
+```
+
+```typescript
+import RNFS from 'react-native-fs';
+
+const sdk = new Orbis1SDK({
+  apiKey: 'your-key',
+  environment: Environment.TESTNET4,
+  wallet: {
+    enabled: true,
+    keys,
+    dataDir: `${RNFS.DocumentDirectoryPath}/wallet-data`,
+  },
+});
+```
+
+**Available paths:**
+- `RNFS.DocumentDirectoryPath` - App documents (default, backed up on iOS)
+- `RNFS.CachesDirectoryPath` - Temporary cache (can be cleared by system)
+- `RNFS.LibraryDirectoryPath` - iOS library directory
+
+::: tip
+For most apps, the default location (documents directory) is appropriate.
+:::
 
 ## Feature guard
 

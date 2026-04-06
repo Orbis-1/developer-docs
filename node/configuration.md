@@ -25,6 +25,7 @@ const sdk = new Orbis1SDK({
   wallet: {
     enabled: true,
     keys,                                    // { mnemonic, xpub, accountXpubVanilla, accountXpubColored, masterFingerprint }
+    dataDir: '/var/lib/myapp/wallet-data',  // optional: defaults to .orbis1-wallet-data at project root
     supportedSchemas: [                      // default: [CFA, NIA, UDA]
       AssetSchema.NIA,
       AssetSchema.UDA,
@@ -84,6 +85,7 @@ const sdk = new Orbis1SDK({
 |---|---|---|---|---|
 | `enabled` | `boolean` | ✅ | — | Must be `true` to activate wallet |
 | `keys` | `Keys` | ✅ | — | Cryptographic keys (mnemonic, xpubs, fingerprint) |
+| `dataDir` | `string` | | `.orbis1-wallet-data` at project root | Absolute path for wallet data storage. Defaults to hidden directory at project root (alongside `node_modules/`) which survives cleanup |
 | `supportedSchemas` | `AssetSchema[]` | | `[CFA, NIA, UDA]` | Asset schemas tracked by the wallet |
 | `maxAllocationsPerUtxo` | `number` | | `1` | Max RGB allocations per UTXO |
 | `vanillaKeychain` | `number` | | `0` | Keychain index for vanilla BTC side |
@@ -140,6 +142,48 @@ const sdk = new Orbis1SDK({
 | `MAINNET` | `sk_live_` |
 
 Passing the wrong key type for the environment will produce a configuration validation error.
+
+## Wallet data storage
+
+### Default location
+
+If `wallet.dataDir` is not specified, wallet data is stored in `.orbis1-wallet-data/` at your **project root** (the directory containing `node_modules/`):
+
+```
+my-project/
+  ├─ node_modules/
+  │   └─ orbis1-sdk-node/
+  ├─ .orbis1-wallet-data/    ← Wallet data (survives npm install)
+  ├─ package.json
+  └─ ...
+```
+
+This hidden directory:
+- ✅ Survives `npm install`, `npm ci`, and `rm -rf node_modules`
+- ✅ Persists across package updates
+- ✅ Stays with your project
+
+### Custom location
+
+For production deployments, explicitly set `dataDir`:
+
+```typescript
+wallet: {
+  enabled: true,
+  keys,
+  dataDir: process.env.WALLET_DATA_DIR || '/var/lib/myapp/wallet-data',
+}
+```
+
+**Recommended paths:**
+- Development: Use default (`.orbis1-wallet-data` at project root)
+- Production server: `/var/lib/myapp/wallet-data` or similar
+- User home: `path.join(os.homedir(), '.myapp', 'wallet-data')`
+- Current directory: `path.join(process.cwd(), 'wallet-data')`
+
+::: warning
+Never store wallet data inside `node_modules/` as it will be deleted during package cleanup.
+:::
 
 ## Feature guard
 
