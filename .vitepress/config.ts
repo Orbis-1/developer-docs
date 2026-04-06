@@ -4,13 +4,13 @@ export default defineConfig({
   title: 'Orbis1 SDK',
   description:
     'Developer documentation for Orbis1 SDK — RGB asset operations for Node.js and React Native.',
-  base: '/developer-docs/',
+  base: '/',
   cleanUrls: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/developer-docs/favicon-32.png' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/developer-docs/orbis1.png' }],
-    ['link', { rel: 'apple-touch-icon', href: '/developer-docs/orbis1.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/orbis1.png' }],
+    ['link', { rel: 'apple-touch-icon', href: '/orbis1.png' }],
     ['meta', { name: 'theme-color', content: '#f97316' }],
   ],
 
