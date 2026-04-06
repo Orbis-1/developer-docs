@@ -74,9 +74,15 @@ If a previous process crashed, a stale `rgb_runtime.lock` file may block wallet 
 
 ## Data directory
 
-The SDK stores wallet state in `./rgb-data/` relative to the installed package root. This directory is created automatically. For production deployments, ensure the directory is persisted across restarts (e.g. Docker volume, EBS mount).
+By default, the SDK stores wallet data in `.orbis1-wallet-data/` at your **project root** (the directory containing `node_modules/`). This directory:
 
-You can verify the path the wallet uses:
+- ✅ Is created automatically
+- ✅ Survives `npm install`, `npm ci`, and `rm -rf node_modules`
+- ✅ Persists across package updates
+
+For production deployments, you can specify a custom location via `wallet.dataDir` in the SDK configuration (see [Configuration](./configuration#wallet-data-storage)). Ensure the directory is persisted across restarts (e.g., Docker volume, EBS mount).
+
+You can verify the path your wallet uses:
 
 ```typescript
 const wallet = sdk.getWallet()!;
