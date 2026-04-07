@@ -70,6 +70,7 @@ export default defineConfig({
           items: [
             { text: 'Environments', link: '/reference/environments' },
             { text: 'Error Codes', link: '/reference/error-codes' },
+            { text: 'Agent Skills', link: '/reference/agent-skills' },
             { text: 'Troubleshooting', link: '/troubleshooting' },
           ],
         },
@@ -106,6 +107,7 @@ export default defineConfig({
           items: [
             { text: 'Environments', link: '/reference/environments' },
             { text: 'Error Codes', link: '/reference/error-codes' },
+            { text: 'Agent Skills', link: '/reference/agent-skills' },
             { text: 'Troubleshooting', link: '/troubleshooting' },
           ],
         },
@@ -131,6 +133,7 @@ export default defineConfig({
           items: [
             { text: 'Environments', link: '/reference/environments' },
             { text: 'Error Codes', link: '/reference/error-codes' },
+            { text: 'Agent Skills', link: '/reference/agent-skills' },
             { text: 'Troubleshooting', link: '/troubleshooting' },
           ],
         },
