@@ -44,6 +44,22 @@ console.log('TXID:', result.txid);
 console.log('Status:', result.status);   // 'verified' | 'pending_verification'
 ```
 
+## `FeeQuote` structure
+
+| Field | Type | Description |
+|---|---|---|
+| `quoteId` | `string` | Unique quote identifier |
+| `expiresAt` | `string` (ISO 8601) | Quote expiry time |
+| `miningFeeSats` | `number` | BTC mining fee covered by service |
+| `feeRateSatPerVByte` | `number` | Fee rate used for PSBT construction |
+| `serviceFeeAmount` | `string` | RGB fee charged to user (base units) |
+| `serviceFeeInvoice` | `string` | RGB invoice for service fee |
+| `serviceFeeRecipientId` | `string` | Recipient ID for service fee |
+| `witnessUtxoFundingSats` | `number` | Witness UTXO funding amount (0 for blinded invoices, >0 for witness invoices) |
+| `miningUTXO` | `object` | Service-provided BTC input UTXO |
+| `miningChangeUTXO` | `object?` | Service-provided BTC change output (optional - undefined when entire UTXO consumed) |
+| `status` | `string` | `'pending' \| 'accepted' \| 'expired' \| 'completed' \| 'failed'` |
+
 ## React Native state integration
 
 ```typescript
