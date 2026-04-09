@@ -93,7 +93,6 @@ const psbtResult = await gasFree.buildPSBT(request, quote);
 const submitResult = await gasFree.submitPSBT(
   quote.quoteId,
   psbtResult,
-  quote.serviceFeeInvoice,
   request.assetId
 );
 
