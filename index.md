@@ -13,13 +13,13 @@ hero:
       text: React Native SDK →
       link: /react-native/
     - theme: alt
-      text: Core Concepts
-      link: /concepts
+      text: Institutional Workflows
+      link: /institutional-workflows
 
 features:
   - icon: 🔐
     title: Full RGB Wallet
-    details: Issue, receive, and transfer NIA, UDA, CFA, and IFA assets. Complete lifecycle management with blinded and witness invoices.
+    details: Issue, receive, and transfer NIA, UDA, CFA, and IFA assets. Track wallet state and transfer history with blinded and witness invoices.
   - icon: ⚡
     title: Gas-Free Transfers
     details: Send RGB assets to anyone without holding BTC for mining fees. The service covers fees in exchange for a small RGB asset payment.
@@ -33,6 +33,10 @@ features:
     title: Modular & Opt-in
     details: Enable only the features you need. Each feature is independently configured and initialized at startup.
   - icon: 🔒
-    title: Non-Custodial
-    details: Your keys never leave your device. All signing happens client-side. The service only contributes sats for mining fees.
+    title: Client Signing
+    details: Wallet keys stay with the client; the Gas-Free service signs its own fee inputs. Institutional control and custody responsibilities require separate assessment.
 ---
+
+## Institutional asset operations
+
+Orbis1 is developing software for institutions to manage tokenised real-world rights. The published RGB SDKs provide wallet and transfer primitives; legal validation, investor eligibility, operator approvals and recovery are additional work. See the [proposed institutional workflow and Qatar scope](/institutional-workflows) for current boundaries and development gates.
