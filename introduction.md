@@ -1,6 +1,8 @@
 # Introduction
 
-Orbis1 SDK is a family of open-source TypeScript packages that give wallet developers and application builders a production-ready interface to the [RGB protocol](https://rgb.tech) on Bitcoin.
+Orbis1 SDK is a family of published open-source TypeScript packages that give wallet developers and application builders an interface to the [RGB protocol](https://rgb.tech) on Bitcoin.
+
+Orbis1 is also developing institutional asset-operation software for global markets, with Qatar proposed as its headquarters and initial regulatory launchpad. The [institutional workflow guide](/institutional-workflows) distinguishes that planned product from the SDK capabilities documented here. Qatar incorporation, a licensed pilot partner and regulatory approval are not being claimed.
 
 ## What is Orbis1 SDK?
 

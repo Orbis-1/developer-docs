@@ -24,6 +24,7 @@ export default defineConfig({
 
     nav: [
       { text: 'Introduction', link: '/introduction' },
+      { text: 'Institutional Workflows', link: '/institutional-workflows' },
       {
         text: 'Node.js SDK',
         link: '/node/',
@@ -119,6 +120,7 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/introduction' },
             { text: 'Core Concepts', link: '/concepts' },
+            { text: 'Institutional Workflows', link: '/institutional-workflows' },
           ],
         },
         {
